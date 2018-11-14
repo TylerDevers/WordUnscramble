@@ -1,0 +1,100 @@
+﻿SImple Calculator
+
+Alogrithm
+    1. Get input from user
+    2. if input not a number, print warning
+    3. get next number, 
+    4. trigger warning if not a number
+    5. get operation input from user
+    6. lower case the operation for case insensitivity
+    7. allow for 'add' and 'subtract' etc words or symbols
+
+Flow CHarts
+    a visual representation of an algorithm - must represent a step by step process
+    draw one in draw.io
+    1. should have an entry and exit point
+    2. parrallelagram  = input
+    3. diamonds = make decisions based on inputs
+    4. rectangle  = operations. process inputs
+
+Console.ReadLine(); gets input from user
+
+strings
+    call .Equals() on a string to see if one variable equals another
+    concatenate
+        can use string.Format() as well as the overloaded operator +
+    .Substring(startpoint, endPoint) allows us to slice out a section of text.
+    .ToLower(), ToUpper(),
+    string Text = string.Empty; is a better way of doing string text = ""; shy away from string literals.
+    stringVar.replace("text we want to replace", "new word needed"); 
+
+Objects and classes
+    objects are an instance of a class. 
+    when instantiating an object from the new class, we must use the new leyword and constructor
+
+Methods
+    methods are just a group of statements that result in a process.
+
+static vs nonstatic methods
+
+Exceptions and throw keywords
+    we need to handle the exceptions/errors so that the application does not crash. We want to keep the user experience going.
+    Exception is just another class, we can create Exception variables
+    throw an exception by
+        throw new Exception("exception message");
+        
+try/catch statements and handling the exception
+    try {
+        //method code goes here.
+        if (something bad)
+        {
+            throw new Exception("Message");
+        }
+    } catch (Exception ex) {
+        //exceptions thrown will be handled here
+        Console.WriteLine("There was an error: {0}", ex.Message);
+    }
+    
+    Using try/catch handles the exception without crashing the program. Not using try catch will cause the program to crash when the exception is thrown.
+    we can nest try/catches if needed. but we should not have code running outside the the try catch statements
+    we can follow the try/catch with a try/catch/finally 
+        statement{ //free up resources from program}
+    be careful not to erase the stack trace when throwing exceptions, else we remove the message logs.
+    only try/catch exceptions if you are going to do something with the exception.
+    
+Unit Tests
+    add new project to root parent object in heirarchy, make it an mstest. this childs a new test project to this parent.
+    reference the class you want to test as a readonly.
+    rename the test appropriately. example test class is:
+    
+        private readonly CalculatorEngine _calculatorEngine = new CalculatorEngine();
+
+            [TestMethod]
+            public void AddsTwoNumbersAndReturnsValidForNonSymbolOperation()
+            {
+                int number1 = 1;
+                int number2 = 2;
+                double result = _calculatorEngine.Calculate("add", number1, number2);
+                Assert.AreEqual(3, result);
+            }
+
+Lists 
+    a type of data structure used to organize data. Can only hold variables of one type
+    size is dynamic, we don't need to specify its size.
+    
+        List<int> myFirstList = new List<int>();
+        myFirstList.Add(10); // type must match list type.
+        myFirstList.Count();
+        
+Arrays
+    a type of data structure used to organize information. an array's size must be given when the array is declared.
+    
+        int[] myArray = new int[sizeOfArrayAsAnInt];
+        int[] myOtherArray = {1, 2, 3, 4 };
+        Array.Sort(myArray); // call the array class to access the sort method. Pass in our array. Will sort values numerically or aplha?
+        
+Loops
+    do the same thing over and over.
+    types of loops:
+        for, while, do
+    
