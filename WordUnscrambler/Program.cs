@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace WordUnscrambler
 {
@@ -6,7 +7,12 @@ namespace WordUnscrambler
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string[] testing = { "the first line", "the second line", "the third line" };
+            // File.WriteAllLines("testingFile.txt", testing);
+            foreach (string line in File.ReadLines("testingFile.txt"))
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }

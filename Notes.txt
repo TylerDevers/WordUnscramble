@@ -27,6 +27,7 @@ strings
     .ToLower(), ToUpper(),
     string Text = string.Empty; is a better way of doing string text = ""; shy away from string literals.
     stringVar.replace("text we want to replace", "new word needed"); 
+    string.Empty
 
 Objects and classes
     objects are an instance of a class. 
@@ -96,5 +97,61 @@ Arrays
 Loops
     do the same thing over and over.
     types of loops:
-        for, while, do
+        for, foreach, while, do
+        
+value types vs reference types
+    a value type is only saved to the stack, which affects how variables are effected.
+    reference types save to the heap, which ensures that a change to a variable occurs regardless of which method it being change from
+    classes are reference types, methods are value types, structs are value types.
+    how to force value types to act as reference types:
+        use 'ref' and 'out' keywords. add these keywords like a type with the arguements/parameters
+        // this will force the value type to act as a ref, allowing ChangeNumber() to change the 'a' variable.
+        static void Main (string[] args)
+        {
+            int a = 10;
+            ChangeNUmber(ref varA);
+            Console.WriteLine(a);
+        
+        }
+        static void ChangeNUmber (ref int a)
+        {
+                a = 90;
+        }
     
+NUll and Null Coalescing
+    null - means no object
+        we can point a reference to null by declaring its value as null. 
+        Person person = null;
+    null coalescing - 
+        Person newPerson = person ?? new Person("Default", "Person");
+        ?? is the null coalescing operand. This means that if the 'person' is pointing to null, then it will instead set newPerson to the default given.
+        
+readonly vs const
+    readonly
+        declares member variables as a constant, but allows it to run at runtime
+        public readonly string text = "text";
+    const
+        declares a constant. will not run at runtime so it must be initialized at declaration;
+        public const string someText = "text";
+        
+read and write to files
+    need:
+        using System.IO;
+    to write:
+        first initialize a string array with some values, then use the File class to access the writeAllLInes("filename.txt", string[] contentToWrite) method,
+        string[] lines = {"1", "2", "3"}
+        // this will create the file and write to it in the location of the current file. Each element will be on a new line.
+        File.WriteAllLines("MyFirstFIle.txt", lines); 
+    to read:
+        // will read from the file, setting each line from the file as a new element in the new array.
+        string[] fileContains = File.ReadAllLines("MyFirstFile.txt");
+        
+        read line by line if the file is large, reading the whole thing may crach the program.
+            foreach (string line in File.ReadLines("MyTextFile.txt"))
+            {
+                Console.WriteLine(line);
+            }
+            
+DRY principle
+    Don't repeat yourself
+    use methods to prevent repeating yourself. THis can get us around writing many loops

@@ -1,0 +1,11 @@
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/bin/Debug/netcoreapp2.1/WordUnscrambler.deps.json
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/bin/Debug/netcoreapp2.1/WordUnscrambler.runtimeconfig.json
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/bin/Debug/netcoreapp2.1/WordUnscrambler.runtimeconfig.dev.json
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/bin/Debug/netcoreapp2.1/WordUnscrambler.dll
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/bin/Debug/netcoreapp2.1/WordUnscrambler.pdb
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/obj/Debug/netcoreapp2.1/WordUnscrambler.csprojAssemblyReference.cache
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/obj/Debug/netcoreapp2.1/WordUnscrambler.csproj.CoreCompileInputs.cache
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/obj/Debug/netcoreapp2.1/WordUnscrambler.AssemblyInfoInputs.cache
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/obj/Debug/netcoreapp2.1/WordUnscrambler.AssemblyInfo.cs
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/obj/Debug/netcoreapp2.1/WordUnscrambler.dll
+/home/tyler/Repos/LearnCSharp/WordUnscrambler/WordUnscrambler/obj/Debug/netcoreapp2.1/WordUnscrambler.pdb
