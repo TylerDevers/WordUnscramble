@@ -82,6 +82,8 @@ Unit Tests
 Lists 
     a type of data structure used to organize data. Can only hold variables of one type
     size is dynamic, we don't need to specify its size.
+    // needs: 
+        using System.Collections.Generic;
     
         List<int> myFirstList = new List<int>();
         myFirstList.Add(10); // type must match list type.
@@ -155,3 +157,6 @@ read and write to files
 DRY principle
     Don't repeat yourself
     use methods to prevent repeating yourself. THis can get us around writing many loops
+    
+iterative development
+    start simple and improve upon it.

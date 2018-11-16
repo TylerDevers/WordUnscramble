@@ -1,10 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using WordUnscrambler.Workers;
 
 namespace WordUnscrambler
 {
     class Program
     {
+        // external word list file
+        private const string wordListFileName = "wordList.txt";
+        private static readonly FileReader fileReader = new FileReader();
+        private static readonly WordMatcher wordMatcher= new WordMatcher();
+
         static void Main(string[] args)
         {
             bool continueWordUnscramble = true;
@@ -31,17 +38,57 @@ namespace WordUnscrambler
                         Console.Write("Option not recognized.");
                         break;
                 }
-            } while ();
+
+                var continueDecision = string.Empty;
+                do
+                {
+                    Console.WriteLine("Do you want to continue? Y/N");
+                    continueDecision = Console.ReadLine() ?? string.Empty;
+                } while 
+                    (
+                    !continueDecision.Equals("Y", StringComparison.OrdinalIgnoreCase) && 
+                    !continueDecision.Equals("N", StringComparison.OrdinalIgnoreCase)
+                    );
+
+                //start or stop loop based on user inputs in nested loop
+                continueWordUnscramble = continueDecision.Equals("Y", StringComparison.OrdinalIgnoreCase);
+
+            } while (continueWordUnscramble);
         }
 
         private static void ExecuteScrambledWordsManualScenario()
         {
-            throw new NotImplementedException();
+            var manualInput = Console.ReadLine() ?? String.Empty;
+            string[] scrambledWords = manualInput.Split(", ");
+            DisplayUmatchedScrambledWords();
         }
+
 
         private static void ExecuteScrambledWordsInFileScenario()
         {
-            throw new NotImplementedException();
+            var fileName = Console.ReadLine() ?? String.Empty;
+            string[] scrambledWords = fileReader.Read(fileName);
+            DisplayUmatchedScrambledWords();
         }
+
+        private static void DisplayUmatchedScrambledWords()
+        {
+            string[] wordList = fileReader.Read(wordListFileName);
+
+            List<MatchedWords> matchedWords = wordMatcher.Match(DisplayUmatchedScrambledWords, wordList);
+
+            if (matchedWords.Any())
+            {
+                foreach (var matchedWord in matchedWords)
+                {
+                    Console.WriteLine("Match found for {0}: {1}", matchedWord.ScrambleWord, matchedWord.Word);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No matches have been found.");
+            }
+        }
+
     }
 }
