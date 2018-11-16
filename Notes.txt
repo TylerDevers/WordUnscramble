@@ -28,6 +28,8 @@ strings
     string Text = string.Empty; is a better way of doing string text = ""; shy away from string literals.
     stringVar.replace("text we want to replace", "new word needed"); 
     string.Empty
+    .ToCharArray(); // breaks a strings characters up into an array.
+    string stringFromArray = new string(array);  // combines an array into a string
 
 Objects and classes
     objects are an instance of a class. 
@@ -119,6 +121,19 @@ value types vs reference types
         {
                 a = 90;
         }
+        
+struct
+    a struct looks like a class with a return type of struct. Structs are used as a collection of like variables.
+    
+    using System;
+    namespace WordUnscrambler.Data
+    {
+        struct MatchedWord
+        {
+            public string ScrambledWord { get; set; }
+            public string Word { get; set; }
+        }
+    }
     
 NUll and Null Coalescing
     null - means no object
@@ -160,3 +175,6 @@ DRY principle
     
 iterative development
     start simple and improve upon it.
+    
+Heirarchy
+    helper classes/scripts should go in a Workers directory, data classes/scripts should go in a Data directory. 

@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{50CF8899-2CA3-421B-B229-8450BA35E7BF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WordUnscrambler/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WordUnscrambler/Data/MatchedWord.cs">
     <Files>
-      <File FileName="WordUnscrambler/Program.cs" Line="13" Column="44" />
-      <File FileName="Notes.txt" Line="162" Column="38" />
-      <File FileName="WordUnscrambler/Workers/FileReader.cs" Line="1" Column="1" />
-      <File FileName="WordUnscrambler/Workers/WordMatcher.cs" Line="1" Column="1" />
+      <File FileName="WordUnscrambler/Program.cs" Line="81" Column="36" />
+      <File FileName="Notes.txt" Line="165" Column="114" />
+      <File FileName="WordUnscrambler/Workers/FileReader.cs" Line="12" Column="49" />
+      <File FileName="WordUnscrambler/Workers/WordMatcher.cs" Line="9" Column="50" />
+      <File FileName="WordUnscrambler/Data/MatchedWord.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.WordUnscrambler PreferredExecutionTarget="MonoDevelop.Default" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using WordUnscrambler.Data;
 using WordUnscrambler.Workers;
 
 namespace WordUnscrambler
@@ -10,7 +11,7 @@ namespace WordUnscrambler
         // external word list file
         private const string wordListFileName = "wordList.txt";
         private static readonly FileReader fileReader = new FileReader();
-        private static readonly WordMatcher wordMatcher= new WordMatcher();
+        private static readonly WordMatcher wordMatcher= new WordMatcher(); 
 
         static void Main(string[] args)
         {
@@ -75,7 +76,7 @@ namespace WordUnscrambler
         {
             string[] wordList = fileReader.Read(wordListFileName);
 
-            List<MatchedWords> matchedWords = wordMatcher.Match(DisplayUmatchedScrambledWords, wordList);
+            List<MatchedWord> matchedWords = wordMatcher.Match(scrambledWords, wordList);
 
             if (matchedWords.Any())
             {
