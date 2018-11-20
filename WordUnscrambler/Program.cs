@@ -67,14 +67,22 @@ namespace WordUnscrambler
 
         private static void ExecuteScrambledWordsInFileScenario()
         {
-            var fileName = Console.ReadLine() ?? String.Empty;
-            string[] scrambledWords = fileReader.Read(fileName);
-            DisplayUmatchedScrambledWords();
+            try 
+            {
+                var fileName = Console.ReadLine() ?? String.Empty;
+                string[] scrambledWords = fileReader.Read(fileName);
+                DisplayUmatchedScrambledWords();
+            }
+            catch (Exception ex)
+            {
+                // throw new Exception(ex.Message);
+                Console.WriteLine(Constants.errorSCrambledWordsCannotBeLoaded + ex.Message);
+            }
         }
 
         private static void DisplayUmatchedScrambledWords()
         {
-            string[] wordList = fileReader.Read(wordListFileName);
+            string[] wordList = fileReader.Read(Constants.wordListFileName);
 
             List<MatchedWord> matchedWords = wordMatcher.Match(scrambledWords, wordList);
 

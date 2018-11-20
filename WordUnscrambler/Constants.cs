@@ -20,6 +20,8 @@
         public const string no = "N";
         public const string file = "F";
         public const string manual = "M";
+
+        public const string wordListFileName = "wordList.txt";
     }
 }
  
