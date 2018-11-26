@@ -4,6 +4,9 @@ using System.IO;
 using WordUnscrambler.Data;
 using WordUnscrambler.Workers;
 
+/*
+ * Left unfinished. Unable to solve bugs
+ */
 namespace WordUnscrambler
 {
     class Program
@@ -61,7 +64,7 @@ namespace WordUnscrambler
         {
             var manualInput = Console.ReadLine() ?? String.Empty;
             string[] scrambledWords = manualInput.Split(", ");
-            DisplayUmatchedScrambledWords();
+            DisplayUnmatchedScrambledWords();
         }
 
 
@@ -71,7 +74,7 @@ namespace WordUnscrambler
             {
                 var fileName = Console.ReadLine() ?? String.Empty;
                 string[] scrambledWords = fileReader.Read(fileName);
-                DisplayUmatchedScrambledWords();
+                DisplayUnmatchedScrambledWords();
             }
             catch (Exception ex)
             {
@@ -80,7 +83,7 @@ namespace WordUnscrambler
             }
         }
 
-        private static void DisplayUmatchedScrambledWords()
+        private static void DisplayUnmatchedScrambledWords()
         {
             string[] wordList = fileReader.Read(Constants.wordListFileName);
 
